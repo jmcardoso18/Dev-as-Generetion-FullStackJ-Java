@@ -67,10 +67,9 @@ public class RandowApresentação {
                 i++;
             }
         }
-        // Imprimindo a sequência do array
+        // Imprimindo a sequência do array de número com o nome correspondente.
         for (z = 0; z < 36; z++) {
-            
-            System.out.println(numeros[z] +"-"+nome[numeros[z]-1]);
+            System.out.println(numeros[z] +"-"+nome[numeros[z]-1]+",");
         }
     }
 }
