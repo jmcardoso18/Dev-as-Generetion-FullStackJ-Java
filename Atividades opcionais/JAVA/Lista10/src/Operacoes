@@ -1,0 +1,86 @@
+public class Operacoes {
+    public static void exibirMenu() {
+        System.out.println("Menu de Operações:");
+        System.out.println("1. Soma de dois números");
+        System.out.println("2. Verificar se um número é par ou ímpar");
+        System.out.println("3. Calcular o fatorial de um número");
+        System.out.println("4. Inverter uma string");
+        System.out.println("5. Calcular a média de uma lista de números");
+        System.out.println("6. Contar o número de vogais em uma string");
+        System.out.println("7. Encontrar o maior número em uma lista");
+        System.out.println("8. Verificar se um número é primo");
+        System.out.println("9. Converter Celsius para Fahrenheit");
+        System.out.println("10. Calcular a potência de um número");
+        System.out.println("11. Sair");
+    }
+    public static int soma(int a, int b) {
+        return a + b;        
+    }
+    public static String verificaPar(int num) {
+        if (num % 2 == 0) {
+            return "O número é par";
+        } else {
+            return "O número é ímpar";
+        }
+    }
+    public static long fatorial(int num) {
+        if (num == 0) {
+            return 1;
+        }
+        long fat = 1;
+        for (int i = 1; i <= num; i++) {
+            fat *= i;
+        }
+        return fat;
+    }
+    public static String inverterString(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+    public static double calcularMedia(int[] numeros) {
+        int soma = 0;
+        for (int num : numeros) {
+            soma += num;
+        }
+        return (double) soma / numeros.length;
+    }
+    public static int contarVogais(String str) {
+        int count = 0;
+        for (char c : str.toLowerCase().toCharArray()) {
+            if ("aeiou".indexOf(c) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+    public static int encontrarMaior(int[] numeros) {
+        int maior = numeros[0];
+        for (int num : numeros) {
+            if (num > maior) {
+                maior = num;
+            }
+        }
+        return maior;
+    }
+
+
+    public static boolean verificarPrimo(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static double celsiusParaFahrenheit(double celsius) {
+        return (celsius * 9/5) + 32;
+    }
+    public static double calcularPotencia(double base, double expoente) {
+        return Math.pow(base, expoente);
+    }
+
+
+
+}
